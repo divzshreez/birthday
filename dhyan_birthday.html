@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Letter for Dhyan</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .envelope {
+        position: relative;
+        width: 260px;
+        height: 160px;
+        background: linear-gradient(135deg, #ffffff, #e6e6e6);
+        border: 2px solid #333;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .button-text {
+        padding: 12px 25px;
+        background: linear-gradient(135deg, #43cea2, #185a9d);
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        z-index: 1;
+    }
+
+    .button-text:hover {
+        background: linear-gradient(135deg, #2ebf91, #0f3d7b);
+        transform: scale(1.05);
+    }
+
+    .letter-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        max-width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        text-align: center;
+        font-family: 'Great Vibes', cursive;
+        font-size: 24px;
+        line-height: 1.8;
+        color: #333;
+        transition: transform 0.5s ease;
+        z-index: 2;
+    }
+
+    .show-letter .letter-content {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: #185a9d;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="envelope" onclick="openLetter()">
+    <button class="button-text">Click to Open</button>
+</div>
+
+<div class="letter-content" id="letter">
+    <h1>Happy Birthday Dhyan!</h1>
+    <p>
+        I will always miss our best moments at the chem lab in Saraswat. <br>
+        The times we went to Divya's house after school got over, the maggie party, <br>
+        the way I cried and you supported me always. <br><br>
+        Thank you so much for being the pure soul you are. <br>
+        Wishing you the happiest birthday ever!
+    </p>
+</div>
+
+<script>
+function openLetter(){
+    document.body.classList.add('show-letter');
+}
+</script>
+
+</body>
+</html>
